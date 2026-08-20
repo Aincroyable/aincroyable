@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4efe4">
+  <title>Noms ainventifs de l'Ain : 401 entreprises et associations recensées | Aincroyable</title>
+  <meta name="description" content="Le recensement des entreprises, commerces et associations de l'Ain qui ont glissé « Ain » dans leur nom : 401 jeux de mots répertoriés, notés et localisés commune par commune.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://www.aincroyable.fr/">
+
+  <!-- Politique de sécurité du contenu.
+       Restreint les origines autorisées : sans elle, un script injecté
+       pourrait charger n'importe quoi ou exfiltrer des données.
+       connect-src couvre déjà *.supabase.co : rien à modifier après avoir
+       branché ta base. Note : frame-ancestors n'a volontairement pas été
+       inclus, cette directive n'ayant aucun effet dans une balise meta —
+       elle exige un en-tête HTTP, que GitHub Pages ne permet pas de définir. -->
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self';
+    style-src 'self' 'unsafe-inline';
+    img-src 'self' data: https://tile.openstreetmap.org https://*.tile.openstreetmap.org;
+    connect-src 'self' https://*.supabase.co;
+    font-src 'self';
+    form-action 'none';
+    base-uri 'self';
+    object-src 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
+  <meta property="og:url" content="https://www.aincroyable.fr/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Aincroyable">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Noms ainventifs de l'Ain : 401 jeux de mots recensés">
+  <meta property="og:description" content="Ils avaient un département, ils en ont fait un jeu de mots. Découvrez et notez les 401 noms ainventifs répertoriés dans l'Ain.">
+  <meta property="og:image" content="https://www.aincroyable.fr/assets/share.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Aincroyable — le grand recensement du calambour aindinois">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Noms ainventifs de l'Ain : 401 jeux de mots recensés">
+  <meta name="twitter:description" content="Ils avaient un département, ils en ont fait un jeu de mots.">
+  <meta name="twitter:image" content="https://www.aincroyable.fr/assets/share.jpg">
+
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://www.aincroyable.fr/#website",
+        "url": "https://www.aincroyable.fr/",
+        "name": "Aincroyable",
+        "description": "Recensement des entreprises et associations de l'Ain dont le nom contient un jeu de mots sur « Ain ».",
+        "inLanguage": "fr-FR"
+      },
+      {
+        "@type": "CollectionPage",
+        "@id": "https://www.aincroyable.fr/#catalogue",
+        "url": "https://www.aincroyable.fr/",
+        "name": "Les noms ainventifs de l'Ain",
+        "isPartOf": { "@id": "https://www.aincroyable.fr/#website" },
+        "about": "Jeux de mots sur le nom du département de l'Ain dans les raisons sociales",
+        "inLanguage": "fr-FR"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Leaflet 1.9.4 servi localement (vendor/leaflet).
+       Les fichiers proviennent du paquet npm officiel et leurs empreintes
+       SHA-256 correspondent à celles publiées par le projet. Aucun CDN
+       n'est contacté : une compromission d'unpkg ne peut pas atteindre le site. -->
+  <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+  <link rel="stylesheet" href="styles.css?v=42">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#accueil"><span class="brand-mark">Ain</span><span>croyable</span></a>
+  <button class="menu-btn" aria-label="Ouvrir le menu">☰</button>
+  <nav class="nav">
+    <a href="#carte">Carte</a>
+    <a href="#demarche">La démarche</a>
+    <a href="#classement">Podium</a>
+    <a href="#catalogue">Catalogue</a>
+    <a href="#donnees-corrections">Données & corrections</a>
+    <button class="nav-share" type="button" data-share-site>Partager</button>
+    <button class="nav-cta" data-action="submit">+ Proposer un nom ainventif</button>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" id="accueil">
+    <div class="hero-copy">
+      <span class="eyebrow">LE GRAND RECENSEMENT DU CALAMBOUR AINDINOIS</span>
+      <h1>Ils avaient un département.<br><em>Ils en ont fait un jeu de mots.</em></h1>
+      <p>Aincroyable recense les entreprises, commerces, clubs et associations qui ont osé glisser <strong>Ain</strong> dans leur nom.</p>
+      <div class="hero-actions">
+        <a href="#carte" class="btn primary">Explorer la carte</a>
+        <button class="btn ghost" id="randomBtn">🎲 Au hasard</button>
+        <button class="btn ghost share-site-btn" type="button" data-share-site>↗ Partager le site</button>
+      </div>
+      <div class="hero-stats">
+        <div><strong id="statEntries">0</strong><span>Noms ainventifs</span></div>
+        <div><strong id="statActive">0</strong><span>actives</span></div>
+        <div><strong id="statAssoc">0</strong><span>associations</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="map-section" id="carte">
+    <div class="section-head map-head">
+      <div>
+        <span class="eyebrow">LA CARTE DE L’AINSPIRATION</span>
+        <h2>Où se cachent les noms ainventifs&nbsp;?</h2>
+      </div>
+      <p>Survolez une localisation pour voir le nom et la note communautaire.</p>
+    </div>
+    <div class="real-map-wrap">
+      <div id="ainMap" class="leaflet-map" aria-label="Carte interactive des noms ainventifs"></div>
+      <div class="map-key" aria-label="Légende de la carte">
+        <span><i class="legend-marker company" aria-hidden="true"><b>▦</b></i>Entreprise</span>
+        <span><i class="legend-marker association" aria-hidden="true"><b>●</b></i>Association</span>
+        <span><i class="legend-marker closed" aria-hidden="true"><b>×</b></i>Fermée / inactive</span>
+        <span><i class="legend-marker uncertain" aria-hidden="true"><b>?</b></i>À vérifier</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="method" id="demarche">
+    <div class="method-copy">
+      <span class="eyebrow">LA DÉMARCHE</span>
+      <h2>Comment devient-on Aincroyable&nbsp;?</h2>
+      <p>Le principe est simple : une structure liée à l’Ain utilise volontairement <strong>« Ain » dans son nom</strong>. Elle peut être active ou disparue : dans les deux cas, elle mérite sa place dans le catalogue.</p>
+      <div class="rules">
+        <article><span>01</span><div><h3>On repère</h3><p>Entreprise, commerce, association, club ou collectif.</p></div></article>
+        <article><span>02</span><div><h3>On vérifie</h3><p>La structure et son statut sont contrôlés avant publication.</p></div></article>
+        <article><span>03</span><div><h3>On archive</h3><p>Les noms ainventifs de structures fermées restent visibles comme patrimoine.</p></div></article>
+        <article><span>04</span><div><h3>Vous votez</h3><p>Chaque visiteur peut donner une note de 0 à 5 départements.</p></div></article>
+      </div>
+      <div class="independence-note">
+        <strong>Projet indépendant</strong>
+        <p>Aincroyable est un projet indépendant. La présence d’une structure dans le catalogue ne signifie pas qu’elle est partenaire, sponsor ou affiliée à Aincroyable, sauf mention explicite.</p>
+      </div>
+
+      <div class="ranking-disclaimer">
+        <strong>À propos du classement</strong>
+        <p>Le classement reflète uniquement la qualité, l’originalité et l’efficacité du jeu de mots dans le nom de la structure. Il ne constitue en aucun cas une évaluation de la qualité, de la fiabilité ou des services proposés par les entreprises et associations référencées.</p>
+      </div>
+      <div class="method-actions">
+        <button class="btn primary" data-action="submit">J’ai trouvé un nom ainventif</button>
+        <button class="btn report-btn" type="button" data-action="report">⚑ Signaler une erreur</button>
+      </div>
+    </div>
+    <aside class="rating-demo">
+      <span class="mini-label">LA NOTE DU JEU DE MOT DANS LE NOM</span>
+      <h3>Quelle note mérite le jeu de mot dans le nom&nbsp;?</h3>
+      <div class="big-rating" id="demoRating"></div>
+      <p>Plus le nom est Aincroyable, plus il reçoit de silhouettes du département.</p>
+    </aside>
+  </section>
+
+  <section class="ranking" id="classement">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">LE PALMARÈS</span>
+        <h2>Le podium de l’Ainspiration</h2>
+      </div>
+      <p>Le classement évolue avec les notes attribuées au jeu de mot dans le nom.</p>
+    </div>
+    <div id="podium" class="podium"></div>
+    <p class="demo-note">Les votes affichés dans cette preview sont des valeurs de démonstration.</p>
+  </section>
+
+  <section class="catalogue-section" id="catalogue">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">LE CATALOGUE</span>
+        <h2>Les noms ainventifs recensés</h2>
+      </div>
+      <p>Entreprises, associations et autres curiosités lexicales de l’Ain.</p>
+    </div>
+
+    <div class="toolbar">
+      <label class="search"><span>⌕</span><input id="searchInput" type="search" placeholder="Rechercher un nom ou une commune…"></label>
+      <div class="filters">
+        <button class="chip active" data-filter="all">Tout</button>
+        <button class="chip" data-filter="Entreprise">Entreprises</button>
+        <button class="chip" data-filter="Association">Associations</button>
+        <button class="chip" data-filter="active">Actives</button>
+        <button class="chip" data-filter="closed">Fermées / inactives</button>
+        <button class="chip" data-filter="uncertain">À vérifier</button>
+      </div>
+      <select id="sortSelect">
+        <option value="rating">Mieux notées</option>
+        <option value="votes">Plus votées</option>
+        <option value="name">A → Z</option>
+      </select>
+    </div>
+
+    <div class="catalogue-meta"><span id="resultCount"></span><span>Cliquez sur une fiche pour voir les détails et voter.</span></div>
+    <div class="grid" id="cards"></div>
+  </section>
+</main>
+
+
+<section class="data-corrections" id="donnees-corrections">
+  <div class="data-corrections-inner">
+    <span class="eyebrow">DONNÉES ET CORRECTIONS</span>
+    <h2>Un catalogue vivant, corrigé quand il le faut.</h2>
+
+    <div class="data-corrections-grid">
+      <article>
+        <h3>Structures en activité</h3>
+        <p>Le catalogue affiche uniquement des informations professionnelles utiles : nom de la structure, commune, activité, statut et, lorsqu’il existe, un lien public vers son site ou sa page publique.</p>
+      </article>
+
+      <article>
+        <h3>Structures fermées</h3>
+        <p>Les noms de structures fermées ou inactives peuvent être conservés à titre d’archive. Elles sont clairement identifiées comme telles afin de ne pas laisser penser qu’elles exercent encore.</p>
+      </article>
+
+      <article>
+        <h3>Vie privée</h3>
+        <p>Aincroyable n’a pas vocation à publier d’adresse personnelle, de téléphone personnel, d’e-mail personnel ni d’autres informations privées sur les dirigeants ou entrepreneurs.</p>
+      </article>
+
+      <article>
+        <h3>Ce que ce site enregistre sur vous</h3>
+        <p>Aucun cookie, aucun traceur, aucune mesure d’audience. Trois choses seulement&nbsp;:</p>
+        <ul class="privacy-list">
+          <li><strong>Vos votes.</strong> Un identifiant aléatoire est créé dans votre navigateur pour que votre note remplace la précédente au lieu de s’y ajouter. Il ne permet pas de vous identifier et disparaît si vous effacez vos données de navigation.</li>
+          <li><strong>Vos signalements.</strong> Si vous utilisez le formulaire de correction, son contenu est enregistré. L’adresse e-mail est facultative et ne sert qu’à vous répondre&nbsp;; sans elle, le signalement est anonyme.</li>
+          <li><strong>Les journaux techniques</strong> de l’hébergeur et de la base de données, qui conservent temporairement les adresses IP de connexion, comme tout serveur web.</li>
+        </ul>
+        <p>Rien n’est revendu ni transmis à des tiers à des fins publicitaires. Pour demander la suppression d’un signalement que vous avez envoyé, écrivez à l’adresse de contact.</p>
+      </article>
+
+      <article>
+        <h3>Une erreur&nbsp;?</h3>
+        <p>Si une information est incorrecte, obsolète ou ne devrait pas apparaître, utilisez le bouton <strong>Signaler une erreur</strong>. Les corrections peuvent être examinées et intégrées au catalogue.</p>
+      </article>
+    </div>
+
+    <div class="archive-note">
+      <strong>Archives</strong>
+      <p>Une structure fermée peut rester visible pour préserver l’histoire des noms ainventifs recensés. Sa présence dans les archives ne constitue pas une recommandation commerciale.</p>
+    </div>
+
+    <div class="data-actions">
+      <button class="btn report-btn" type="button" data-action="report">⚑ Signaler une erreur</button>
+      <a class="btn ghost" href="#demarche">Relire la démarche</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="brand footer-brand"><span class="brand-mark">Ain</span><span>croyable</span></div>
+  <p>Le patrimoine du jeu de mots en Ain.</p>
+  <div><a href="#demarche">La démarche</a><a href="#catalogue">Catalogue</a><a href="#donnees-corrections">Données & corrections</a></div>
+</footer>
+
+<div id="shareToast" class="share-toast" role="status" aria-live="polite" hidden>
+  Lien copié — vous pouvez le coller où vous voulez ✓
+</div>
+
+<dialog id="detailDialog">
+  <button class="close" aria-label="Fermer">×</button>
+  <div id="detailContent"></div>
+</dialog>
+
+<dialog id="submitDialog">
+  <button class="close" aria-label="Fermer">×</button>
+  <div class="submit-wrap">
+    <span class="eyebrow">CONTRIBUER</span>
+    <h2>Un nouveau nom ainventif&nbsp;?</h2>
+    <form id="submitForm">
+      <label>Nom de la structure<input required name="name"></label>
+      <label>Commune<input required name="city"></label>
+      <label>Lien utile<input name="url" type="url"></label>
+      <button class="btn primary" type="submit">Envoyer la proposition</button>
+    </form>
+    <div id="submitThanks" hidden>
+      <strong>Merci&nbsp;!</strong>
+      <p data-submit-note>Votre proposition a bien été transmise.</p>
+      <p class="submit-privacy">Nous conservons uniquement le nom, la commune et le lien que vous avez indiqués, le temps d’étudier la proposition.</p>
+    </div>
+  </div>
+</dialog>
+
+<dialog id="reportDialog">
+  <button class="close" aria-label="Fermer">×</button>
+  <div class="submit-wrap report-wrap">
+    <span class="eyebrow">SIGNALER UNE ERREUR</span>
+    <h2>Quelque chose cloche&nbsp;?</h2>
+    <p class="report-intro">Merci de nous aider à garder le catalogue à jour. Indiquez simplement ce qui doit être corrigé.</p>
+
+    <form id="reportForm">
+      <label>
+        Structure concernée
+        <select name="structure" id="reportStructure" required>
+          <option value="">Choisir une structure…</option>
+        </select>
+      </label>
+
+      <label>
+        Type d’erreur
+        <select name="errorType" required>
+          <option value="">Choisir…</option>
+          <option value="fermeture">La structure a fermé</option>
+          <option value="reouverture">La structure est toujours / de nouveau active</option>
+          <option value="nom">Le nom est incorrect</option>
+          <option value="commune">La commune / localisation est incorrecte</option>
+          <option value="lien">Le lien est incorrect ou ne fonctionne plus</option>
+          <option value="doublon">C’est un doublon</option>
+          <option value="hors-sujet">Cette entrée ne devrait pas être dans le catalogue</option>
+          <option value="autre">Autre erreur</option>
+        </select>
+      </label>
+
+      <label>
+        Correction proposée
+        <textarea name="correction" rows="5" required placeholder="Expliquez brièvement ce qu’il faudrait corriger…"></textarea>
+      </label>
+
+      <label>
+        Lien utile <span class="optional">(facultatif)</span>
+        <input name="sourceUrl" type="url" placeholder="Site officiel, page Google, registre…">
+      </label>
+
+      <label>
+        Votre e-mail <span class="optional">(facultatif)</span>
+        <input name="email" type="email" placeholder="Uniquement si vous souhaitez être recontacté">
+      </label>
+
+      <button class="btn primary report-submit" type="submit">Transmettre le signalement</button>
+    </form>
+
+    <div id="reportThanks" class="report-success" hidden>
+      <strong>Merci !</strong>
+      <p>Le signalement a bien été transmis.</p>
+    </div>
+  </div>
+</dialog>
+
+
+<script src="vendor/leaflet/leaflet.js"></script>
+<script src="config.js?v=41"></script>
+<script src="data.js?v=41"></script>
+<script src="ain-outline-exact.js?v=41"></script>
+<script src="app.js?v=42"></script>
+</body>
+</html>
