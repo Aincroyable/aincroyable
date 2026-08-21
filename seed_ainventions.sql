@@ -1,5 +1,5 @@
 -- Remplissage de la table ainventions depuis data.js
--- Généré le 19/08/2026 — 401 fiches.
+-- Mis à jour le 21/08/2026 — 403 fiches.
 -- Relançable sans doublon : les fiches existantes sont mises à jour.
 
 insert into public.ainventions (slug, name, city) values
@@ -46,6 +46,7 @@ insert into public.ainventions (slug, name, city) values
   ('ain-petit-service-bourg-en-bresse', 'Ain Petit Service', 'Bourg-en-Bresse'),
   ('ain-portes-et-fenetres-montagnat', 'ain portes et Fenêtres', 'Montagnat'),
   ('ain-pose-vonnas', 'Ain Pose', 'Vonnas'),
+  ('ain-pose-ta-fenetre-lagnieu', 'Ain Pose ta Fenêtre', 'Lagnieu'),
   ('ain-pour-tous-tous-pour-ain-bourg-en-bresse', 'Ain pour Tous, Tous pour Ain', 'Bourg-en-Bresse'),
   ('ain-pressions-bien-etre-villars-les-dombes', 'Ain Pressions Bien-Être', 'Villars-les-Dombes'),
   ('ain-pro-concept-druillat', 'Ain Pro Concept', 'Druillat'),
@@ -399,6 +400,7 @@ insert into public.ainventions (slug, name, city) values
   ('trail-ain-dventre-varambon', 'Trail Ain''Dventre', 'Varambon'),
   ('trempl-ain-agro-bourg-en-bresse', 'Trempl''Ain Agro', 'Bourg-en-Bresse'),
   ('un-br-ain-de-bonheur-ceignes', 'Un Br''Ain de Bonheur', 'Ceignes'),
+  ('un-parr-ain-emploi-mionnay', 'Un Parr''Ain Emploi', 'Mionnay'),
   ('verdain-atelier-journans', 'Verdain Atelier', 'Journans'),
   ('vision-ain-terieur-ceyzerieu', 'Vision Ain''Térieur', 'Ceyzérieu'),
   ('vit-ain-plombier-tossiat', 'Vit''Ain Plombier', 'Tossiat'),
