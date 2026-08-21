@@ -1,5 +1,5 @@
 -- Remplissage de la table ainventions depuis data.js
--- Mis à jour le 21/08/2026 — 403 fiches.
+-- Mis à jour le 21/08/2026 — 405 fiches.
 -- Relançable sans doublon : les fiches existantes sont mises à jour.
 
 insert into public.ainventions (slug, name, city) values
@@ -197,6 +197,7 @@ insert into public.ainventions (slug, name, city) values
   ('bistrot-1900-ain-pont-de-vaux', 'Bistrot 1900 Ain', 'Pont-de-Vaux'),
   ('bomat-ain-lent', 'Bomat''Ain', 'Lent'),
   ('bon-ain-spiration-ceyzeriat', 'Bon''Ain Spiration', 'Ceyzériat'),
+  ('bouc-ain-martignat', 'Bouc''Ain', 'Martignat'),
   ('boyat-dominique-ainstant-bois-manziat', 'Boyat Dominique / Ainstant Bois', 'Manziat'),
   ('br-ain-de-malice-saint-martin-le-chatel', 'Br''Ain de Malice', 'Saint-Martin-le-Châtel'),
   ('br-ain-de-plomberie-attignat', 'Br''Ain de Plomberie', 'Attignat'),
@@ -387,6 +388,7 @@ insert into public.ainventions (slug, name, city) values
   ('scm-ain-firmier-belley', 'SCM Ain''Firmier', 'Belley'),
   ('secretaire-ain-dependante-villieu-loyes-mollon', 'Secrétaire Ain''Dépendante', 'Villieu-Loyes-Mollon'),
   ('select-evainement-coligny', 'Select Evainement', 'Coligny'),
+  ('smart-ainfo-attignat', 'Smart''Ainfo', 'Attignat'),
   ('solutr-ain-loyettes', 'Solutr''Ain', 'Loyettes'),
   ('souti-ain-scolaire-oyonnax', 'Souti''Ain Scolaire', 'Oyonnax'),
   ('taxi-malain-bourg-en-bresse', 'Taxi Malain', 'Bourg-en-Bresse'),

@@ -19,7 +19,7 @@ notes, et **les propositions de nouvelles structures ne te parviennent pas**
    **West EU (Ireland)**. Le mot de passe de base de données s'affiche une seule
    fois — range-le dans ton gestionnaire de mots de passe.
 3. *SQL Editor* → *New query* → coller tout `supabase.sql` → **Run**.
-4. Nouvelle requête → coller tout `seed_ainventions.sql` → **Run**. 403 fiches.
+4. Nouvelle requête → coller tout `seed_ainventions.sql` → **Run**. 405 fiches.
 5. *Project Settings → API* : copier **Project URL** et la clé **`anon` `public`**.
 6. Les inscrire dans `config.js` :
 
