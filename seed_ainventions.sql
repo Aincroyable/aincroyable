@@ -1,5 +1,5 @@
 -- Remplissage de la table ainventions depuis data.js
--- Mis à jour le 23/08/2026 — 419 fiches.
+-- Mis à jour le 23/08/2026 — 420 fiches.
 -- Relançable sans doublon : les fiches existantes sont mises à jour.
 
 insert into public.ainventions (slug, name, city) values
@@ -126,6 +126,7 @@ insert into public.ainventions (slug, name, city) values
   ('ain-team-racing-ceyzeriat', 'Ain-Team-Racing', 'Ceyzériat'),
   ('aindolor-plateau-d-hauteville', 'Aindolor', 'Plateau d''Hauteville'),
   ('ainfinimentdrone-bettant', 'Ainfinimentdrone', 'Bettant'),
+  ('ain-si-sois-je-oyonnax', 'Ain''Si Sois Je', 'Oyonnax'),
   ('ainfluen-sab-arbent', 'Ainfluen''Sab', 'Arbent'),
   ('ainflux-bourg-en-bresse', 'Ainflux', 'Bourg-en-Bresse'),
   ('ainflux-services-chevroux', 'Ainflux Services', 'Chevroux'),

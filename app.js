@@ -23,7 +23,7 @@ function addFallbackDepartmentOutline(map){
   }).addTo(map);
 }
 
-// Les 419 fiches portent déjà leur commune officielle et leurs coordonnées :
+// Les 420 fiches portent déjà leur commune officielle et leurs coordonnées :
 // aucun appel réseau n'est nécessaire pour les situer. Seule reste utile la
 // dispersion des épingles superposées, calculée une fois au chargement.
 function normalizePlace(s){

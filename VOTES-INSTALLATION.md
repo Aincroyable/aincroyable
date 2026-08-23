@@ -34,7 +34,7 @@ signalements et des propositions, et les trois seules fonctions d'écriture :
 `cast_vote()`, `submit_suggestion()`, `submit_report()`.
 
 ### 3. Remplir le catalogue
-Nouvelle requête → coller tout `seed_ainventions.sql` → **Run**. 419 fiches insérées.
+Nouvelle requête → coller tout `seed_ainventions.sql` → **Run**. 420 fiches insérées.
 
 Ce fichier est relançable : après chaque mise à jour de `data.js`, régénère-le et
 rejoue-le, les fiches existantes sont mises à jour sans doublon.
