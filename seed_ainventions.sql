@@ -1,5 +1,5 @@
 -- Remplissage de la table ainventions depuis data.js
--- Mis à jour le 21/08/2026 — 405 fiches.
+-- Mis à jour le 23/08/2026 — 419 fiches.
 -- Relançable sans doublon : les fiches existantes sont mises à jour.
 
 insert into public.ainventions (slug, name, city) values
@@ -407,5 +407,19 @@ insert into public.ainventions (slug, name, city) values
   ('vision-ain-terieur-ceyzerieu', 'Vision Ain''Térieur', 'Ceyzérieu'),
   ('vit-ain-plombier-tossiat', 'Vit''Ain Plombier', 'Tossiat'),
   ('elec-renov-ain-matafelon-granges', 'Élec Renov''Ain', 'Matafelon-Granges'),
-  ('epicerie-gr-ain-de-sel-saint-just', 'Épicerie Gr''Ain de Sel', 'Saint-Just')
+  ('epicerie-gr-ain-de-sel-saint-just', 'Épicerie Gr''Ain de Sel', 'Saint-Just'),
+  ('agencement-ain-terieur-pont-d-ain', 'Agencement Ain''Térieur', 'Pont-d''Ain'),
+  ('ain-croyable-com-trevoux', 'Ain''croyable Com', 'Trévoux'),
+  ('ain-croyable-noel-bourg-en-bresse', 'Ain''croyable Noël', 'Bourg-en-Bresse'),
+  ('ain-dispensables-villieu-loyes-mollon', 'Ain''dispensables !', 'Villieu-Loyes-Mollon'),
+  ('ain-stant-panier-amberieu-en-bugey', 'Ain''stant Panier', 'Ambérieu-en-Bugey'),
+  ('aindice-montrevel-en-bresse', 'Aindice', 'Montrevel-en-Bresse'),
+  ('ainfluence-construction-saint-denis-en-bugey', 'Ainfluence Construction', 'Saint-Denis-en-Bugey'),
+  ('ainpacte-notaires-associes-lagnieu', 'Ainpacte Notaires Associés', 'Lagnieu'),
+  ('amap-la-jur-ainsienne-bellignat', 'AMAP La Jur''Ainsienne', 'Bellignat'),
+  ('aux-kotas-finland-ain-izieu', 'Aux Kotas Finland''Ain', 'Izieu'),
+  ('l-ain-stant-yourte-boyeux-saint-jerome', 'L''Ain''stant Yourte', 'Boyeux-Saint-Jérôme'),
+  ('l-olainpe-tossiat', 'L''Olainpe', 'Tossiat'),
+  ('le-clan-fel-ain-bourg-en-bresse', 'Le Clan Fél''Ain', 'Bourg-en-Bresse'),
+  ('tonn-ain-hebergement-ain-solite-journans', 'Tonn''Ain Hébergement Ain''Solite', 'Journans')
 on conflict (slug) do update set name = excluded.name, city = excluded.city;
