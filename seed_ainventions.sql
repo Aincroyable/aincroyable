@@ -1,5 +1,5 @@
 -- Remplissage de la table ainventions depuis data.js
--- Mis à jour le 23/08/2026 — 420 fiches.
+-- Mis à jour le 24/08/2026 — 458 fiches.
 -- Relançable sans doublon : les fiches existantes sont mises à jour.
 
 insert into public.ainventions (slug, name, city) values
@@ -422,5 +422,43 @@ insert into public.ainventions (slug, name, city) values
   ('l-ain-stant-yourte-boyeux-saint-jerome', 'L''Ain''stant Yourte', 'Boyeux-Saint-Jérôme'),
   ('l-olainpe-tossiat', 'L''Olainpe', 'Tossiat'),
   ('le-clan-fel-ain-bourg-en-bresse', 'Le Clan Fél''Ain', 'Bourg-en-Bresse'),
-  ('tonn-ain-hebergement-ain-solite-journans', 'Tonn''Ain Hébergement Ain''Solite', 'Journans')
+  ('tonn-ain-hebergement-ain-solite-journans', 'Tonn''Ain Hébergement Ain''Solite', 'Journans'),
+  ('l-ain-croyable-aventure-de-choupette-saint-andre-sur-vieux-jonc', 'L''Ain Croyable Aventure de Choupette', 'Saint-André-sur-Vieux-Jonc'),
+  ('les-ain-parfaites-bourg-saint-christophe', 'Les Ain'' Parfaites', 'Bourg-Saint-Christophe'),
+  ('ain-stinct-trail-tossiat', 'Ain''Stinct Trail', 'Tossiat'),
+  ('ain-finiment-jeux-oyonnax', 'Ain''Finiment Jeux', 'Oyonnax'),
+  ('ain-event-bourg-en-bresse', 'Ain''Event', 'Bourg-en-Bresse'),
+  ('aindinois-fun-amberieu-en-bugey', 'Aindinois Fun', 'Ambérieu-en-Bugey'),
+  ('l-ainplantable-bourg-en-bresse', 'L''Ainplantable', 'Bourg-en-Bresse'),
+  ('ain-probables-civrieux', 'Ain-Probables', 'Civrieux'),
+  ('main-dans-la-m-ain-bourg-en-bresse', 'Main dans la M''Ain', 'Bourg-en-Bresse'),
+  ('les-p-tits-bouts-d-ain-francheleins', 'Les P''tits Bouts d''Ain', 'Francheleins'),
+  ('l-ain-pechable-saint-martin-le-chatel', 'L''Ain Pêchable', 'Saint-Martin-le-Châtel'),
+  ('les-recups-de-l-ain-possible-bettant', 'Les Récups de l''Ain Possible', 'Bettant'),
+  ('aindigo-sonore-bourg-en-bresse', 'Aindigo Sonore', 'Bourg-en-Bresse'),
+  ('ain-comparable-villette-sur-ain', 'Ain''Comparable', 'Villette-sur-Ain'),
+  ('ca-swing-dans-l-ain-bourg-en-bresse', 'Ça Swing dans l''Ain', 'Bourg-en-Bresse'),
+  ('ain-spiration-cize', 'Ain''Spiration', 'Cize'),
+  ('ain-saon-oriser-boissey', 'Ain-Saon''Oriser', 'Boissey'),
+  ('ain-clusif-des-pieds-au-sens-lagnieu', 'Ain''Clusif - Des pieds au sens', 'Lagnieu'),
+  ('ain-pulsion-sportive-des-apprentis-bourg-en-bresse', 'Ain''Pulsion Sportive des Apprentis', 'Bourg-en-Bresse'),
+  ('aincolorz-bourg-en-bresse', 'Aincolorz', 'Bourg-en-Bresse'),
+  ('les-ain-beciles-racing-servas', 'Les Ain''Béciles Racing', 'Servas'),
+  ('ain-trepides-205-balan', 'Ain''Trépides 205', 'Balan'),
+  ('ain-team-rh-montrevel-en-bresse', 'Ain''Team RH', 'Montrevel-en-Bresse'),
+  ('les-plongeurs-de-l-ain-possible-de-belley', 'Les Plongeurs de l''Ain-Possible de Belley', 'Belley'),
+  ('ain-instant-nature-loisirs-club-vaux-en-bugey', 'Ain''Instant Nature Loisirs Club (AINLC)', 'Vaux-en-Bugey'),
+  ('ain-clusif-boissey', 'Ain''Clusif', 'Boissey'),
+  ('ainbattable-peronnas', 'Ainbattable', 'Péronnas'),
+  ('les-joyeuses-ain-trepides-jassans-riottier', 'Les Joyeuses Ain''Trépides', 'Jassans-Riottier'),
+  ('aintemporel-sono-beauregard', 'Aintemporel Sono', 'Beauregard'),
+  ('aincolyte-adventure-amberieu-en-bugey', 'Aincolyte Adventure', 'Ambérieu-en-Bugey'),
+  ('ain-struments-formation-biziat', 'Ain''Struments Formation', 'Biziat'),
+  ('l-ainx-plateau-d-hauteville', 'L''Ainx', 'Plateau d''Hauteville'),
+  ('ainsolite-reyrieux', 'Ainsolite', 'Reyrieux'),
+  ('l-ainfatigable-4l-lagnieu', 'L''Ainfatigable 4L', 'Lagnieu'),
+  ('les-aindomptables-gazelles-la-boisse', 'Les Aindomptables Gazelles', 'La Boisse'),
+  ('les-aintrepides-thil', 'Les Aintrépides', 'Thil'),
+  ('les-ain-separables-foissiat', 'Les Ain''Séparables', 'Foissiat'),
+  ('l-ain-vers-l-autre-miribel', 'L''Ain vers l''Autre', 'Miribel')
 on conflict (slug) do update set name = excluded.name, city = excluded.city;
