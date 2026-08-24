@@ -6032,7 +6032,7 @@ window.CATALOGUE = [
     "statusLabel": "En activité",
     "verified": "2026-08-19",
     "description": "Association basée à Maillat.",
-    "publicUrl": "https://www.google.com/maps/search/?api=1&query=Gr%27Ain+de+Folie+Maillat",
+    "publicUrl": "https://www.maillat.fr/grain-de-folie/",
     "siren": "912058773",
     "rna": "",
     "officialUrl": "https://annuaire-entreprises.data.gouv.fr/entreprise/912058773",
