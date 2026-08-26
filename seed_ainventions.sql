@@ -1,5 +1,5 @@
 -- Remplissage de la table ainventions depuis data.js
--- Mis à jour le 24/08/2026 — 459 fiches.
+-- Mis à jour le 26/08/2026 — 460 fiches.
 -- Relançable sans doublon : les fiches existantes sont mises à jour.
 
 insert into public.ainventions (slug, name, city) values
@@ -461,5 +461,6 @@ insert into public.ainventions (slug, name, city) values
   ('les-aintrepides-thil', 'Les Aintrépides', 'Thil'),
   ('les-ain-separables-foissiat', 'Les Ain''Séparables', 'Foissiat'),
   ('l-ain-vers-l-autre-miribel', 'L''Ain vers l''Autre', 'Miribel'),
-  ('ain-stemps-loisirs-haut-valromey', 'Ain''sTemps Loisirs', 'Haut-Valromey')
+  ('ain-stemps-loisirs-haut-valromey', 'Ain''sTemps Loisirs', 'Haut-Valromey'),
+  ('raid-femin-ain-poncin', 'Raid Fémin''Ain', 'Poncin')
 on conflict (slug) do update set name = excluded.name, city = excluded.city;
