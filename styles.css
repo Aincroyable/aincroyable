@@ -1256,6 +1256,7 @@ footer p,footer div:last-child{font-size:var(--font-small)!important}
 
 /* Restore the original card colours */
 .podium-card{
+  position:relative!important;
   overflow:visible!important;
   padding-top:88px!important;
   background:rgba(255,255,255,.055)!important;
